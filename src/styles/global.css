@@ -10,21 +10,36 @@ body.menu-open {
 }
 }
 
-@keyframes hero-cycle {
-  0%, 33% {
-    background-image: url('/Slideshow_1.png');
-  }
-  34%, 66% {
-    background-image: url('/Slideshow_2.png');
-  }
-  67%, 100% {
-    background-image: url('/Slideshow_3.png');
-  }
+.privacy-policy h1,
+.impressum h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.5rem;
 }
 
-.hero {
-  @apply bg-cover bg-center;
-  animation: hero-cycle 15s infinite;
+.privacy-policy h2,
+.impressum h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.privacy-policy h3,
+.impressum h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+}
+
+.privacy-policy p,
+.impressum p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
 }
 
 :focus-visible {

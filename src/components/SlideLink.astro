@@ -1,0 +1,21 @@
+---
+const { text, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group relative inline-flex items-center
+          justify-center overflow-hidden px-3 py-3
+          text-[#004e7a] font-semibold transition-all
+          duration-300 hover:opacity-80">
+  <span class="transition-all duration-300
+          group-hover:mr-2"
+    >{text}</span
+  >
+  <span
+    class="transform -translate-x-3 opacity-0
+        transition-all duration-300 group-hover:translate-x-0
+        group-hover:opacity-100"
+    >→</span
+  >
+</a>

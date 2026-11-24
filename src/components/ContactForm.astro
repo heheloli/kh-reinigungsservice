@@ -1,0 +1,177 @@
+<form
+  action=""
+  method="POST"
+  class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg shadow-slate-900/5">
+  <div class="space-y-7 px-6 py-7 md:px-9 md:py-9">
+    <!-- Personal details -->
+    <fieldset>
+      <legend class="mb-4 text-sm font-semibold text-[#004e7a]">
+        Ihre Kontaktdaten
+      </legend>
+
+      <div class="grid gap-x-5 gap-y-5 md:grid-cols-2">
+        <div>
+          <label
+            for="anrede"
+            class="mb-2 block text-sm font-medium text-[#004e7a]">
+            Anrede{" "}
+            <span class="text-[#004e7a]" aria-hidden="true">
+              *
+            </span>
+          </label>
+          <select
+            id="anrede"
+            name="anrede"
+            required
+            class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-[#004e7a] focus:ring-4 focus:ring-[#004e7a]/10">
+            <option value="" disabled selected>
+              Bitte auswählen
+            </option>
+            <option value="herr">Herr</option>
+            <option value="frau">Frau</option>
+            <option value="divers">Divers</option>
+          </select>
+        </div>
+
+        <div>
+          <label
+            for="vorname"
+            class="mb-2 block text-sm font-medium text-[#004e7a]">
+            Vorname{" "}
+            <span class="text-[#004e7a]" aria-hidden="true">
+              *
+            </span>
+          </label>
+          <input
+            id="vorname"
+            name="vorname"
+            type="text"
+            autocomplete="given-name"
+            required
+            class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-[#004e7a] focus:ring-4 focus:ring-[#004e7a]/10"
+          />
+        </div>
+
+        <div>
+          <label
+            for="nachname"
+            class="mb-2 block text-sm font-medium text-[#004e7a]">
+            Nachname{" "}
+            <span class="text-[#004e7a]" aria-hidden="true">
+              *
+            </span>
+          </label>
+          <input
+            id="nachname"
+            name="nachname"
+            type="text"
+            autocomplete="family-name"
+            required
+            class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-[#004e7a] focus:ring-4 focus:ring-[#004e7a]/10"
+          />
+        </div>
+
+        <div>
+          <label
+            for="telefon"
+            class="mb-2 block text-sm font-medium text-[#004e7a]">
+            Telefonnummer{" "}
+            <span class="text-[#004e7a]" aria-hidden="true">
+              *
+            </span>
+          </label>
+          <input
+            id="telefon"
+            name="telefon"
+            type="tel"
+            autocomplete="tel"
+            required
+            class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-[#004e7a] focus:ring-4 focus:ring-[#004e7a]/10"
+          />
+        </div>
+
+        <div class="md:col-span-2">
+          <label
+            for="email"
+            class="mb-2 block text-sm font-medium text-[#004e7a]">
+            E-Mail-Adresse{" "}
+            <span class="text-[#004e7a]" aria-hidden="true">
+              *
+            </span>
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-[#004e7a] focus:ring-4 focus:ring-[#004e7a]/10"
+          />
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="h-px bg-slate-100" aria-hidden="true"></div>
+
+    <!-- Message -->
+    <div>
+      <label
+        for="message"
+        class="mb-2 block text-sm font-semibold text-[#004e7a]">
+        Ihre Nachricht{" "}
+        <span class="text-[#004e7a]" aria-hidden="true">
+          *
+        </span>
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        required
+        placeholder="Worum geht es? Beschreiben Sie kurz Ihr Anliegen …"
+        class="w-full resize-y rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm leading-6 text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-[#004e7a] focus:ring-4 focus:ring-[#004e7a]/10"></textarea>
+    </div>
+
+    <!-- Privacy -->
+    <div class="rounded-lg bg-slate-50 p-4">
+      <label class="flex cursor-pointer items-start gap-3 text-sm leading-6 text-slate-600">
+        <input
+          type="checkbox"
+          name="privacy"
+          required
+          class="mt-1 size-4 shrink-0 accent-[#004e7a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004e7a]"
+        />
+        <span>
+          Ich bestätige, die Datenschutzhinweise zur Kenntnis genommen zu haben.
+          <span class="font-semibold text-[#004e7a]" aria-hidden="true">
+            *
+          </span>
+        </span>
+      </label>
+    </div>
+
+    <!-- Submit -->
+    <div class="flex flex-col gap-3 border-t border-slate-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-xs text-slate-500">
+        Wir verwenden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage.
+      </p>
+      <button
+        type="submit"
+        class:list={[
+          "relative inline-flex items-center justify-center overflow-hidden",
+          "w-fit self-end rounded-lg bg-blue-100 px-9 py-4 text-center font-semibold text-white group",
+          "cursor-pointer border-0",
+        ]}>
+        <span
+          class="absolute inset-0 bg-[#004e7a] translate-x-0
+      group-hover:translate-x-full transition-transform duration-500 ease-in-out"></span>
+
+        <span
+          class="relative z-10 group-hover:text-[#004e7a]
+      transition-colors duration-500 text-base">
+          Jetzt anfragen
+        </span>
+      </button>
+    </div>
+  </div>
+</form>

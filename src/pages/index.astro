@@ -1,23 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HeroSlideshow from "../components/HeroSlideshow.astro";
+import SlideBtn from "../components/SlideBtn.astro";
+import SlideLink from "../components/SlideLink.astro";
 import ServicesCarousel from "../components/ServicesCarousel.astro";
 import TrustCard from "../components/TrustCard.astro";
+
+import Slide1 from "../assets/slideshow/slide1.png";
+import Slide2 from "../assets/slideshow/slide2.png";
+import Slide3 from "../assets/slideshow/slide3.png";
+
 import Icon1 from "../assets/Icon1.webp";
 import Icon2 from "../assets/Icon2.webp";
 import Icon3 from "../assets/Icon3.webp";
 import Icon4 from "../assets/Icon4.webp";
 
 const pageTitle = "K&H Gebäudereinigung";
+
+const slides = [Slide1, Slide2, Slide3];
+
+const trustItems = [
+  {
+    title: "Vertrauen",
+    description: "Transparenter Umgang mit unseren Kunden",
+    image: Icon1,
+  },
+  {
+    title: "Qualität",
+    description: "Gründliche und sorgfältige Reinigung",
+    image: Icon2,
+  },
+  {
+    title: "Zuverlässigkeit",
+    description: "Pünktliche und planbare Reinigungstermine",
+    image: Icon3,
+  },
+  {
+    title: "Kundennähe",
+    description: "Persönliche Betreuung und Kommunikation",
+    image: Icon4,
+  },
+];
 ---
 
 <Layout pageTitle={pageTitle}>
   <!-- Hero -->
-  <section
-    class="hero bg-white py-24 border-b border-gray-200 relative h-[calc(100vh-120px)] overflow-hidden">
-    <div class="absolute inset-0 bg-[#071e3d]/50"></div>
-
-    <div
-      class="max-w-6xl mx-auto flex gap-12 items-center h-full relative z-10">
+  <section class="bg-[#071e3d] py-24 px-4 border-b border-gray-200 relative h-[calc(100svh-120px)] overflow-hidden">
+    <HeroSlideshow slides={slides} visibleSeconds={7} fadeSeconds={1} />
+    <div class="max-w-6xl mx-auto flex items-center h-full relative z-10">
       <div>
         <h1 class="text-5xl font-bold mb-6 text-white">
           Wir bringen Glanz in Ihre Räume
@@ -25,29 +55,23 @@ const pageTitle = "K&H Gebäudereinigung";
         <p class="text-lg text-white mb-8">
           Reinigungsservice für Privat- und Gewerbekunden in Worms und Umgebung
         </p>
+        :
         <div class="flex justify-center">
-          <a
-            href="/contact"
-            class="relative inline-block overflow-hidden p-6 font-semibold
-            text-white bg-blue-100 rounded-lg group w-sm text-center">
-            <span
-              class="absolute inset-0 bg-[#004e7a] translate-x-0
-                group-hover:translate-x-full transition-transform duration-500 ease-in-out"
-            ></span>
-
-            <span
-              class="relative z-10 group-hover:text-[#004e7a]
-                transition-colors duration-500 text-xl">
-              Jetzt anfragen
-            </span>
-          </a>
+          <SlideBtn
+            href="/kontakt"
+            text="Jetzt anfragen"
+            width="w-100"
+            height="h-19"
+          />
         </div>
       </div>
     </div>
   </section>
-  <section class="py-24 border-b border-gray-200">
+
+  <!-- About -->
+  <section class="py-24 px-4 border-b border-gray-200">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl md:text-3xl font-bold mb-6">Über uns</h2>
+      <h2 class="text-3xl font-bold mb-6">Über uns</h2>
 
       <p class="text-lg text-gray-600 max-w-xl mx-auto mb-10 leading-relaxed">
         Sauberkeit ist unsere Leidenschaft. Mit maßgeschneiderten
@@ -56,67 +80,36 @@ const pageTitle = "K&H Gebäudereinigung";
         Unternehmen oder Privatkunde - wir arbeiten gründlich und zuverlässig.
       </p>
 
-      <a
-        href="/about"
-        class="group relative inline-flex items-center
-          justify-center overflow-hidden px-3 py-3
-          text-[#004e7a] font-semibold transition-all
-          duration-300 hover:opacity-80">
-        <span class="transition-all duration-300
-          group-hover:mr-2"
-          >Weitere Informationen</span
-        >
-        <span
-          class="transform -translate-x-3 opacity-0
-        transition-all duration-300 group-hover:translate-x-0
-        group-hover:opacity-100"
-          >→</span
-        >
-      </a>
+      <SlideLink text="Weitere Informationen" href="/ueber-uns" />
     </div>
   </section>
-  <section class="py-24 bg-white border-b border-gray-200">
+
+  <!-- Services -->
+  <section class="py-24 px-4 bg-white border-b border-gray-200">
     <div class="max-w-6xl mx-auto">
-      <!-- Section Header -->
       <div class="mb-16 max-w-2xl">
-        <h2 class="text-3xl md:text-3xl font-bold mb-4">Unsere Leistungen</h2>
+        <h2 class="text-3xl font-bold mb-4">Unsere Leistungen</h2>
         <p class="text-gray-600">
           Wir bieten ein breites Spektrum an Reinigungsdienstleistungen für
           unterschiedliche Anforderungen.
         </p>
       </div>
 
-      <!-- Services Carousel -->
       <ServicesCarousel />
 
-      <!-- Single CTA -->
       <div class="text-center mt-12">
-        <a
-          href="/services"
-          class="group relative inline-flex items-center
-          justify-center overflow-hidden px-6 py-3
-          text-[#004e7a] font-semibold transition-all
-          duration-300 hover:opacity-80">
-          <span class="transition-all duration-300
-          group-hover:mr-2"
-            >Weitere Informationen</span
-          >
-          <span
-            class="transform -translate-x-3 opacity-0
-        transition-all duration-300 group-hover:translate-x-0
-        group-hover:opacity-100"
-            >→</span
-          >
-        </a>
+        <SlideLink text="Weitere Informationen" href="/leistungen" />
       </div>
     </div>
   </section>
-  <section class="py-24 bg-white">
+
+  <!-- Trust -->
+  <section class="py-24 px-4 bg-white">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2">
       <div class="px-6">
-        <h1 class="text-3xl md:text-3xl font-bold mb-8">
+        <h2 class="text-3xl font-bold mb-8">
           Was uns als Reinigungsunternehmen auszeichnet
-        </h1>
+        </h2>
         <p class="text-gray-600 text-lg mb-8">
           Im Mittelpunkt unserer Arbeit stehen Ihre Anforderungen und
           Erwartungen. Wir legen großen Wert auf eine zuverlässige Ausführung,
@@ -124,26 +117,9 @@ const pageTitle = "K&H Gebäudereinigung";
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-x-6 gap-y-8">
-        <TrustCard
-          title="Vertrauen"
-          description="Transparenter Umgang mit unseren Kunden"
-          image={Icon1}
-        />
-        <TrustCard
-          title="Qualität"
-          description="Gründliche und sorgfältige Reinigung"
-          image={Icon2}
-        />
-        <TrustCard
-          title="Zuverlässigkeit"
-          description="Pünktliche und planbare Reinigungstermine"
-          image={Icon3}
-        />
-        <TrustCard
-          title="Kundennähe"
-          description="Persönliche Betreuung und Kommunikation"
-          image={Icon4}
-        />
+        {trustItems.map((item) => (
+          <TrustCard {...item} />
+        ))}
       </div>
     </div>
   </section>

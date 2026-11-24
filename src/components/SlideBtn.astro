@@ -1,0 +1,38 @@
+---
+interface Props {
+  href?: string;
+  text?: string;
+  width?: string;
+  height?: string;
+  class?: string;
+}
+
+const {
+  href = "/contact",
+  text = "Jetzt anfragen",
+  width = "w-sm",
+  height = "h-19",
+  class: extra = "",
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    "relative inline-flex items-center justify-center overflow-hidden",
+    "max-w-full px-6 font-semibold text-white bg-blue-100 rounded-lg group text-center",
+    width,
+    height,
+    extra,
+  ]}>
+  <span
+    class="absolute inset-0 bg-[#004e7a] translate-x-0
+      group-hover:translate-x-full transition-transform duration-500 ease-in-out"
+  ></span>
+
+  <span
+    class="relative z-10 group-hover:text-[#004e7a]
+      transition-colors duration-500 text-xl">
+    {text}
+  </span>
+</a>

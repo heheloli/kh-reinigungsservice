@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import SlideBtn from "../components/SlideBtn.astro";
 
 import Gebaudereinigung from "../assets/services/Gebaudereinigung__Buroreinigung.png";
 import Treppen from "../assets/services/Treppen-__Treppenhausreinigung.png";
 import Praxisreinigung from "../assets/services/Praxisreinigung.png";
 import Privathaushalt from "../assets/services/Privathaushaltsreinigung.png";
 import Glasreinigung from "../assets/services/Glasreinigung.png";
+import Grundreinigung from "../assets/services/Grundreinigung.png";
 
 const pageTitle = "Unsere Leistungen";
 const floatingActionsThreshold = 0;
@@ -42,13 +44,19 @@ const services = [
       "Saubere Glasflächen sorgen für mehr Licht und einen gepflegten Gesamteindruck. Wir reinigen Fenster, Glastüren und sonstige Glasflächen im Innenbereich streifenfrei und sorgfältig. Dabei achten wir auf eine schonende Reinigung der Rahmen und angrenzenden Flächen.",
     image: Glasreinigung,
   },
+  {
+    title: "Grundreinigung",
+    description:
+      "Bei unserer Grundreinigung sorgen wir für gründliche Sauberkeit bis ins Detail. Wir entfernen hartnäckige Verschmutzungen und Ablagerungen von Böden, Sockelleisten und schwer zugänglichen Flächen. Dabei verwenden wir geeignete Reinigungsmittel und achten auf eine materialgerechte Pflege. So bringen wir Ihre Räumlichkeiten wieder zum Glänzen und schaffen ein rundum gepflegtes Umfeld – ideal für Büros, Praxen und Privathaushalte.",
+    image: Grundreinigung,
+  },
 ];
 ---
 
 <Layout
   pageTitle={pageTitle}
   floatingActionsThreshold={floatingActionsThreshold}>
-  <section class="bg-white max-w-6xl py-24 mx-auto px-6">
+  <section class="bg-white max-w-6xl py-24 px-4 mx-auto">
     <div class="mb-20">
       <h1 class="text-4xl md:text-5xl font-bold mb-6">Unsere Leistungen</h1>
       <p class="text-lg text-gray-600 font-semibold max-w-2xl">
@@ -60,40 +68,29 @@ const services = [
     <!-- Services Grid -->
     <div class="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-2">
       <!-- Service Cards -->
-      {
-        services.map((service) => (
-          <ServiceCard
-            title={service.title}
-            description={service.description}
-            image={service.image}
-          />
-        ))
-      }
+      {services.map((service) => (
+        <ServiceCard
+          title={service.title}
+          description={service.description}
+          image={service.image}
+        />
+      ))}
     </div>
   </section>
 
   <!-- Call to Action -->
-  <section class="mb-24 pb-16 max-w-6xl mx-auto">
+  <section class="mb-24 px-4 pb-16 max-w-6xl mx-auto">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="text-3xl font-bold mb-6">
         Sie suchen ein pflichtbewusstes Reinigungsunternehmen? Dann sind Sie bei
         uns genau richtig!
       </h2>
-      <a
+      <SlideBtn
         href="/contact"
-        class="relative inline-block overflow-hidden px-12 py-5 font-semibold
-            text-white bg-blue-100 rounded-lg group max-w-max text-center">
-        <span
-          class="absolute inset-0 bg-[#004e7a] translate-x-0
-                group-hover:translate-x-full transition-transform duration-500 ease-in-out"
-        ></span>
-
-        <span
-          class="relative z-10 group-hover:text-[#004e7a]
-                transition-colors duration-500">
-          Kontakt aufnehmen
-        </span>
-      </a>
+        text="Kontakt aufnehmen"
+        width="w-60"
+        height="h-19"
+      />
     </div>
   </section>
 </Layout>
