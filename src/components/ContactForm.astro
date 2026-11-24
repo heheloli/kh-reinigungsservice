@@ -1,7 +1,12 @@
 <form
-  action=""
+  action="https://api.web3forms.com/submit"
   method="POST"
   class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg shadow-slate-900/5">
+  <input
+    type="hidden"
+    name="access_key"
+    value="995f94d8-d2a1-4630-b554-41c55fe200e6"
+  />
   <div class="space-y-7 px-6 py-7 md:px-9 md:py-9">
     <!-- Personal details -->
     <fieldset>
@@ -152,15 +157,27 @@
 
     <!-- Submit -->
     <div class="flex flex-col gap-3 border-t border-slate-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
-      <p class="text-xs text-slate-500">
-        Wir verwenden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage.
-      </p>
+      <div class="flex flex-col gap-4">
+        <p class="text-sm text-slate-500">
+          Pflichtfelder sind mit{" "}
+          <span class="text-[#004e7a]" aria-hidden="true">
+            *
+          </span>{" "}
+          gekennzeichnet.
+        </p>
+        <p class="text-sm text-slate-500">
+          Wir verwenden Ihre Angaben ausschließlich zur Bearbeitung Ihrer
+          Anfrage.
+        </p>
+      </div>
+
       <button
         type="submit"
+        disabled
         class:list={[
           "relative inline-flex items-center justify-center overflow-hidden",
-          "w-fit self-end rounded-lg bg-blue-100 px-9 py-4 text-center font-semibold text-white group",
-          "cursor-pointer border-0",
+          "w-fit self-end rounded-lg bg-blue-100 px-9 py-4 text-center font-semibold text-white",
+          "cursor-pointer border-0 disabled:cursor-not-allowed disabled:opacity-60",
         ]}>
         <span
           class="absolute inset-0 bg-[#004e7a] translate-x-0
@@ -175,3 +192,22 @@
     </div>
   </div>
 </form>
+
+<script>
+  const privacyCheckbox = document.querySelector<HTMLInputElement>(
+    'input[name="privacy"]',
+  );
+  const submitButton = document.querySelector<HTMLButtonElement>(
+    'button[type="submit"]',
+  );
+
+  if (privacyCheckbox && submitButton) {
+    const updateSubmitButton = () => {
+      submitButton.disabled = !privacyCheckbox.checked;
+      submitButton.classList.toggle("group", privacyCheckbox.checked);
+    };
+
+    privacyCheckbox.addEventListener("change", updateSubmitButton);
+    updateSubmitButton();
+  }
+</script>
