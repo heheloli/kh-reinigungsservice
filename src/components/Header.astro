@@ -15,7 +15,7 @@ import Navigation from "./Navigation.astro";
 
   <div
     id="header-content"
-    class="max-w-6xl mx-auto h-30 flex items-center justify-between transition-all duration-300">
+    class="max-w-6xl mx-auto h-30 flex items-center justify-between px-4 transition-all duration-300">
     <!-- Logo / Brand -->
     <a href="/" class="flex items-center">
       <Image
@@ -23,6 +23,7 @@ import Navigation from "./Navigation.astro";
         src={logoIMG}
         alt="K&H Gebäudereinigung Logo"
         width={265}
+        style="width: min(265px, 75vw)"
         class="transition-all duration-300"
       />
     </a>
@@ -50,7 +51,7 @@ import Navigation from "./Navigation.astro";
       header.style.paddingBottom = "0.25rem";
       headerContent.style.height = "5rem";
       if (headerLogo) {
-        headerLogo.style.width = "200px";
+        headerLogo.style.width = "min(200px, 75vw)";
       }
     } else {
       // At top - full size
@@ -58,7 +59,7 @@ import Navigation from "./Navigation.astro";
       header.style.paddingBottom = "0";
       headerContent.style.height = "7.5rem";
       if (headerLogo) {
-        headerLogo.style.width = "265px";
+        headerLogo.style.width = "min(265px, 75vw)";
       }
     }
 

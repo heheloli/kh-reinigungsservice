@@ -1,0 +1,181 @@
+<div
+  id="mobile-menu"
+  class="hidden fixed z-30 left-0 right-0 bottom-0 overflow-hidden md:hidden pointer-events-none">
+  <!-- Panel slides down from under the header (clipped by the wrapper above) -->
+  <div
+    id="mobile-menu-panel"
+    class="absolute inset-x-0 top-0 bg-white shadow-xl
+           -translate-y-full transition-transform duration-300 ease-out
+           motion-reduce:transition-none">
+    <nav
+      aria-label="Hauptnavigation"
+      class="flex flex-col divide-y divide-gray-200 px-4 text-lg">
+      <a href="/" data-close-menu class="flex gap-3 items-center py-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+          />
+        </svg>
+        Startseite
+      </a>
+      <a
+        href="/leistungen"
+        data-close-menu
+        class="flex gap-3 items-center py-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+          />
+        </svg>
+        Leistungen
+      </a>
+      <a href="/ueber-uns" data-close-menu class="flex gap-3 items-center py-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+          />
+        </svg>
+        Über uns
+      </a>
+      <a href="/kontakt" data-close-menu class="flex gap-3 items-center py-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+          />
+        </svg>
+        Kontakt
+      </a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  const DURATION = 300; // keep in sync with duration-300 on the panel
+  const LABELS = { open: "Menü öffnen", close: "Menü schließen" };
+
+  function initMobileMenu(
+    menu: HTMLElement,
+    panel: HTMLElement,
+    button: HTMLElement,
+  ) {
+    const header = document.getElementById("header");
+    const desktop = window.matchMedia("(min-width: 768px)"); // Tailwind md
+    let isOpen = false;
+    let hideTimer: number | undefined;
+
+    function setButtonState(open: boolean) {
+      button.setAttribute("aria-expanded", String(open));
+      button.setAttribute("aria-label", open ? LABELS.close : LABELS.open);
+    }
+
+    function positionBelowHeader() {
+      if (header) {
+        menu.style.top = `${header.getBoundingClientRect().height}px`;
+      }
+    }
+
+    function openMenu() {
+      if (isOpen) return;
+      isOpen = true;
+      clearTimeout(hideTimer); // cancel a pending "hide" from a quick close
+
+      positionBelowHeader();
+      menu.classList.remove("hidden", "pointer-events-none");
+      void panel.offsetHeight; // force reflow so the slide-down transition runs
+      panel.classList.remove("-translate-y-full");
+
+      document.body.classList.add("menu-open");
+      setButtonState(true);
+      document.addEventListener("keydown", onKeydown);
+
+      panel
+        .querySelector<HTMLElement>("a[href]")
+        ?.focus({ preventScroll: true });
+    }
+
+    function closeMenu(restoreFocus = true) {
+      if (!isOpen) return;
+      isOpen = false;
+
+      panel.classList.add("-translate-y-full");
+      menu.classList.add("pointer-events-none"); // page is clickable right away
+
+      document.body.classList.remove("menu-open");
+      setButtonState(false);
+      document.removeEventListener("keydown", onKeydown);
+
+      if (restoreFocus) button.focus();
+
+      hideTimer = window.setTimeout(
+        () => menu.classList.add("hidden"),
+        DURATION,
+      );
+    }
+
+    function onKeydown(e: KeyboardEvent) {
+      if (e.key === "Escape") closeMenu();
+    }
+
+    // The button now toggles instead of only opening
+    button.setAttribute("aria-controls", panel.id);
+    setButtonState(false);
+    button.addEventListener("click", () => (isOpen ? closeMenu() : openMenu()));
+
+    // Tap on the empty area below the panel closes the menu
+    menu.addEventListener("click", (e) => {
+      if (e.target === menu) closeMenu();
+    });
+
+    // Links close the menu
+    menu.querySelectorAll<HTMLElement>("[data-close-menu]").forEach((link) => {
+      link.addEventListener("click", () => closeMenu());
+    });
+
+    // Don't leave the menu (and the scroll lock) open when resizing/rotating to desktop
+    desktop.addEventListener("change", (e) => {
+      if (e.matches) closeMenu(false);
+    });
+
+    if (header && "ResizeObserver" in window) {
+      new ResizeObserver(positionBelowHeader).observe(header);
+    }
+  }
+
+  const menu = document.getElementById("mobile-menu");
+  const panel = document.getElementById("mobile-menu-panel");
+  const button = document.getElementById("mobile-menu-button");
+
+  if (menu && panel && button) initMobileMenu(menu, panel, button);
+</script>

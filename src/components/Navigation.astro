@@ -1,27 +1,39 @@
 ---
 import DesktopNav from "./DesktopNav.astro";
-import MobileNav from "./MobileNav.astro";
+import MobileMenu from "./MobileMenu.astro";
 ---
 
 <!-- Desktop Navigation -->
-<DesktopNav />
+<nav aria-label="Primary" class="hidden md:flex items-center gap-8">
+  <a href="/" class="dt-nav-a">
+    {" "}
+    Startseite{" "}
+  </a>
+  <a href="/ueber-uns" class="dt-nav-a">
+    {" "}
+    Über uns{" "}
+  </a>
+  <a href="/leistungen" class="dt-nav-a">
+    {" "}
+    Leistungen{" "}
+  </a>
+  <a href="/kontakt" class="dt-nav-a">
+    {" "}
+    Kontakt{" "}
+  </a>
+</nav>
 
 <!-- Mobile Menu Button -->
 <button
   id="mobile-menu-button"
-  class="md:hidden flex flex-col justify-between items-center w-6 h-6 relative z-50"
+  class="md:hidden flex flex-col justify-center gap-1.5 items-center w-6 h-6 relative z-50"
   aria-label="Open menu"
   aria-expanded="false"
   aria-controls="mobile-menu-panel">
-  <span
-    class="block h-0.5 w-5 bg-gray-900 transition-transform duration-300 origin-center"
-  ></span>
-  <span class="block h-0.5 w-5 bg-gray-900 transition-opacity duration-300"
-  ></span>
-  <span
-    class="block h-0.5 w-5 bg-gray-900 transition-transform duration-300 origin-center"
-  ></span>
+  <span class="block h-0.5 w-5 bg-gray-900"></span>
+  <span class="block h-0.5 w-5 bg-gray-900"></span>
+  <span class="block h-0.5 w-5 bg-gray-900"></span>
 </button>
 
 <!-- Mobile Navigation -->
-<MobileNav />
+<MobileMenu />

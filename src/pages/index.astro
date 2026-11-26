@@ -45,22 +45,21 @@ const trustItems = [
 
 <Layout pageTitle={pageTitle}>
   <!-- Hero -->
-  <section class="bg-[#071e3d] py-24 px-4 border-b border-gray-200 relative h-[calc(100svh-120px)] overflow-hidden">
+  <section class="bg-[#071e3d] py-12 md:py-24 px-4 border-b border-gray-200 relative h-[calc(100svh-120px)] overflow-hidden">
     <HeroSlideshow slides={slides} visibleSeconds={7} fadeSeconds={1} />
     <div class="max-w-6xl mx-auto flex items-center h-full relative z-10">
       <div>
-        <h1 class="text-5xl font-bold mb-6 text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">
           Wir bringen Glanz in Ihre Räume
         </h1>
         <p class="text-lg text-white mb-8">
           Reinigungsservice für Privat- und Gewerbekunden in Worms und Umgebung
         </p>
-        :
         <div class="flex justify-center">
           <SlideBtn
             href="/kontakt"
             text="Jetzt anfragen"
-            width="w-100"
+            width="w-full sm:w-auto"
             height="h-19"
           />
         </div>
@@ -69,7 +68,7 @@ const trustItems = [
   </section>
 
   <!-- About -->
-  <section class="py-24 px-4 border-b border-gray-200">
+  <section class="py-12 md:py-24 px-4 border-b border-gray-200">
     <div class="max-w-5xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">Über uns</h2>
 
@@ -85,11 +84,11 @@ const trustItems = [
   </section>
 
   <!-- Services -->
-  <section class="py-24 px-4 bg-white border-b border-gray-200">
+  <section class="py-12 md:py-24 px-4 bg-white border-b border-gray-200">
     <div class="max-w-6xl mx-auto">
       <div class="mb-16 max-w-2xl">
         <h2 class="text-3xl font-bold mb-4">Unsere Leistungen</h2>
-        <p class="text-gray-600">
+        <p class="text-lg text-gray-600">
           Wir bieten ein breites Spektrum an Reinigungsdienstleistungen für
           unterschiedliche Anforderungen.
         </p>
@@ -104,9 +103,9 @@ const trustItems = [
   </section>
 
   <!-- Trust -->
-  <section class="py-24 px-4 bg-white">
+  <section class="py-12 md:py-24 px-4 bg-white">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2">
-      <div class="px-6">
+      <div>
         <h2 class="text-3xl font-bold mb-8">
           Was uns als Reinigungsunternehmen auszeichnet
         </h2>
